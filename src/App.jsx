@@ -10,12 +10,12 @@ function App() {
 
   const toggleMode = () => {
     if(mode === 'Dark'){
-      document.body.style.backgroundColor = 'black';
+      document.body.style.backgroundColor = '#3c3c3c';
       document.body.style.color = 'white';
       setMode('Light');
     }
     else{
-      document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundColor = '#d6d6d6';
       document.body.style.color = 'black';
       setMode('Dark');
     }

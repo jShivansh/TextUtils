@@ -26,10 +26,10 @@ export default function Navbar(props) {
                     
                 </ul>
                 
-                <button className="btn btn-success" type="submit" onClick={handleClick}>{props.modeName} Mode</button>
+                {/* <button className="btn btn-success" type="submit" onClick={handleClick}>{props.modeName} Mode</button> */}
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                    <label class="form-check-label " htmlFor="flexSwitchCheckDefault">Enable {props.modeName} mode</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="toggleMode" onChange={handleClick}/>
+                    <label class="form-check-label " htmlFor="toggleMode" style={{color: "black"}}>Enable {props.modeName} mode</label>
                 </div>
 
                 
