@@ -5,33 +5,29 @@ import TextForm from './components/TextForm'
 
 function App() {
   
-  const [darkMode, setDarkMode] = useState('Dark')
-  const [backgroundChange, setBackgroundChange] = useState({
-    backgroundColor: 'white',
-    color: 'black'
-  });
+  const [mode, setMode] = useState('Dark')
+  
 
-  const backgroundChangeClick = (mode) => {
-    if(mode=== 'Dark'){
-        setBackgroundChange({
-        backgroundColor: 'black',
-        color: 'white'
-      });
-      setDarkMode('Light');
-    } 
-    else if(mode === 'Light'){
-      setBackgroundChange({
-        backgroundColor: 'white',
-        color: 'black'
-      });
-      setDarkMode('Dark');
+  const toggleMode = () => {
+    if(mode === 'Dark'){
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+      setMode('Light');
     }
-  };
+    else{
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+      setMode('Dark');
+    }
+  }
 
   return (
     <>
-      <div style={backgroundChange}>
-        <Navbar modeName={darkMode} backgroundChangeClick={backgroundChangeClick}/>
+      <div >
+        <Navbar 
+          modeName={mode}
+          toggleMode = {toggleMode} 
+        />
         <div className="container my-3" >
           <TextForm textHeading='Enter your Text here:'/>
         </div>

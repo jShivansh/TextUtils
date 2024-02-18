@@ -2,9 +2,11 @@ import React from 'react'
 
 export default function Navbar(props) {
 
+    
     const handleClick = () => {
-        props.backgroundChangeClick(props.modeName);
+        props.toggleMode();
     }
+
   return (
     <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,6 +27,11 @@ export default function Navbar(props) {
                 </ul>
                 
                 <button className="btn btn-success" type="submit" onClick={handleClick}>{props.modeName} Mode</button>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                    <label class="form-check-label " htmlFor="flexSwitchCheckDefault">Enable {props.modeName} mode</label>
+                </div>
+
                 
                 </div>
             </div>
