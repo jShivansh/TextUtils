@@ -56,7 +56,7 @@ function TextForm(props) {
             <p>{strng.split(' ').length} words and {strng.length} charecters</p>
             <p>Time to read the text is {0.005 * strng.split(' ').length} minutes</p>
             <h2>Preview</h2>
-            <p>{strng}</p>
+            <p>{strng.length>0?strng:'Enter something in the Textbox to preview here.'}</p>
         </div>
     </>
   )
