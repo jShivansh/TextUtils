@@ -32,7 +32,7 @@ function TextForm(props) {
         if(copyText.length>0){
             props.showAlert("Your Text is copied", "success");
         }
-        else{props.showAlert("Please enter some text", "danger");}
+        // else{props.showAlert("Please enter some text", "danger");}
     }
 
     const handleExtraSpace = () => {
