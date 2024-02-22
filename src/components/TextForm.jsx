@@ -11,7 +11,8 @@ function TextForm(props) {
         setStrng(newStrng);
         if(newStrng.length>0){
             props.showAlert("Converted to Uppercase", "success");
-        };
+        }
+        else{props.showAlert("Please enter some text", "danger");}
     }
 
     const handleLowercase = (e)=>{
@@ -20,7 +21,8 @@ function TextForm(props) {
         setStrng(newStrng);
         if(newStrng.length>0){
             props.showAlert("Converted to Lowercase", "success");
-        };
+        }
+        else{props.showAlert("Please enter some text", "danger");}
     }
     
     const handleCopy = () => {
@@ -29,7 +31,8 @@ function TextForm(props) {
         navigator.clipboard.writeText(copyText.value);
         if(copyText.length>0){
             props.showAlert("Your Text is copied", "success");
-        };
+        }
+        else{props.showAlert("Please enter some text", "danger");}
     }
 
     const handleExtraSpace = () => {
@@ -37,7 +40,8 @@ function TextForm(props) {
         setStrng(newText.join(" "));
         if(newText.length>0){
             props.showAlert("Extra spaces are removed", "success");
-        };
+        }
+        else{props.showAlert("Please enter some text", "danger");}
     }
 
     const handleClear = (e)=>{

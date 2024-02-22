@@ -2,9 +2,12 @@ import React from 'react'
 
 function Alerts(props) {
     const capitaliseFunt = (word) => {
-        const lower = word.toLowerCase();
+        let lower = word.toLowerCase();
+        if(lower==='danger'){lower='warning'};
         return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
+
+
   return (
     <>
       {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
