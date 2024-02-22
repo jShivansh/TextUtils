@@ -29,9 +29,9 @@ function TextForm(props) {
         let copyText = document.getElementById('textBox');
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
-        if(copyText.length>0){
-            props.showAlert("Your Text is copied", "success");
-        }
+        
+        props.showAlert("Your Text is copied", "success");
+        
         // else{props.showAlert("Please enter some text", "danger");}
     }
 
