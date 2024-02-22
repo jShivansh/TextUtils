@@ -9,23 +9,35 @@ function TextForm(props) {
         e.preventDefault();
         let newStrng = strng.toUpperCase();
         setStrng(newStrng);
+        if(newStrng.length>0){
+            props.showAlert("Converted to Uppercase", "success");
+        };
     }
 
     const handleLowercase = (e)=>{
         e.preventDefault();
         let newStrng = strng.toLowerCase();
         setStrng(newStrng);
+        if(newStrng.length>0){
+            props.showAlert("Converted to Lowercase", "success");
+        };
     }
     
     const handleCopy = () => {
         let copyText = document.getElementById('textBox');
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        if(copyText.length>0){
+            props.showAlert("Your Text is copied", "success");
+        };
     }
 
     const handleExtraSpace = () => {
         let newText = strng.split(/[ ]+/);
         setStrng(newText.join(" "));
+        if(newText.length>0){
+            props.showAlert("Extra spaces are removed", "success");
+        };
     }
 
     const handleClear = (e)=>{
