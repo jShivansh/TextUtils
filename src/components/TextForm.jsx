@@ -69,7 +69,7 @@ function TextForm(props) {
         </div>
         <div className='container my-4'>
             <h1>Your Text Summary</h1>
-            <p>{strng.split(' ').filter((data)=>{return data.length!==0}).length} words and {strng.length} charecters</p>
+            <p>{strng.split(/\s+/).filter((data)=>{return data.length!==0}).length} words and {strng.length} charecters</p>
             <p>Time to read the text is {0.005 * strng.split(' ').filter((data)=>{return data.length!==0}).length} minutes</p>
             <h2>Preview</h2>
             <p>{strng.length>0?strng:'Enter something in the Textbox to preview here.'}</p>
