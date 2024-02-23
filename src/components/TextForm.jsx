@@ -29,16 +29,16 @@ function TextForm(props) {
         let copyText = document.getElementById('textBox');
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
-        
-        props.showAlert("Your Text is copied", "success");
-        
-        // else{props.showAlert("Please enter some text", "danger");}
+        if(strng.length>0){
+            props.showAlert("Your Text is copied", "success");
+        }
+        else{props.showAlert("Please enter some text", "danger");}
     }
 
     const handleExtraSpace = () => {
         let newText = strng.split(/[ ]+/);
         setStrng(newText.join(" "));
-        if(newText.length>0){
+        if(strng.length>0){
             props.showAlert("Extra spaces are removed", "success");
         }
         else{props.showAlert("Please enter some text", "danger");}
@@ -69,8 +69,8 @@ function TextForm(props) {
         </div>
         <div className='container my-4'>
             <h1>Your Text Summary</h1>
-            <p>{strng.split(' ').length} words and {strng.length} charecters</p>
-            <p>Time to read the text is {0.005 * strng.split(' ').length} minutes</p>
+            <p>{strng.split(' ').filter((data)=>{return data.length!==0}).length} words and {strng.length} charecters</p>
+            <p>Time to read the text is {0.005 * strng.split(' ').filter((data)=>{return data.length!==0}).length} minutes</p>
             <h2>Preview</h2>
             <p>{strng.length>0?strng:'Enter something in the Textbox to preview here.'}</p>
         </div>
