@@ -8,6 +8,7 @@ function App() {
   
   const [mode, setMode] = useState('Dark');
   const [alerts, setAlerts] = useState(null);
+  const [btnColor, setBtncolor] = useState('primary')
 
   
 
@@ -17,12 +18,14 @@ function App() {
       document.body.style.color = 'white';
       setMode('Light');
       showAlert("Dark Mode is enabled", 'success');
+      setBtncolor('info');
     }
     else{
       document.body.style.backgroundColor = '#d6d6d6';
       document.body.style.color = 'black';
       setMode('Dark');
       showAlert("Light Mode is enabled", 'success');
+      setBtncolor('primary');
     }
   }
 
@@ -54,6 +57,7 @@ function App() {
           <TextForm 
             textHeading='Enter your Text here:'
             showAlert = {showAlert}
+            btnColor = {btnColor}
           />
         </div>
       </div>
