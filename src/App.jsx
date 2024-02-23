@@ -3,6 +3,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm'
 import Alerts from './components/Alerts'
+//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import About from './components/About'
 
 function App() {
   
@@ -36,7 +38,7 @@ function App() {
     })
     setTimeout(() => {
       setAlerts(null); // Clear the alert after 3 seconds
-    }, 2000);
+    }, 1500);
   }
 
   // useEffect(() => {
@@ -45,7 +47,8 @@ function App() {
 
   return (
     <>
-      <div >
+    {/* <Router> */}
+      
         <Navbar 
           modeName={mode}
           toggleMode = {toggleMode} 
@@ -54,13 +57,22 @@ function App() {
           alert={alerts}
         />
         <div className="container my-3" >
-          <TextForm 
-            textHeading='Enter your Text here:'
-            showAlert = {showAlert}
-            btnColor = {btnColor}
-          />
+          
+        {/* <Routes> */}
+          {/* <Route exact path='/TextUtils' element={ */}
+            <TextForm 
+              textHeading='Enter your Text here:'
+              showAlert = {showAlert}
+              btnColor = {btnColor}
+            />
+            {/* }/> */}
+          {/* <Route path='/TextUtils/about' element={<About />}/> */}
+        {/* </Routes> */}
+          
+          
         </div>
-      </div>
+      
+      {/* </Router> */}
     </>
   )
 }

@@ -61,11 +61,11 @@ function TextForm(props) {
             <textarea className="form-control" id="textBox" rows="8" onChange={handleChange} value={strng}></textarea>
         </div>
         <div>
-            <button className={`btn btn-${props.btnColor} mx-1`} onClick={handleUppercase}>Convert to UPPERCASE</button>
-            <button className={`btn btn-${props.btnColor} mx-1`} onClick={handleLowercase}>Convert to lowercase</button>
-            <button className={`btn btn-${props.btnColor} mx-1`} onClick={handleCopy}>Copy Text</button>
-            <button className={`btn btn-${props.btnColor} mx-1`} onClick={handleExtraSpace}>Remove extra spaces</button>
-            <button className={`btn btn-${props.btnColor} mx-1`} onClick={handleClear}>Clear Text</button>
+            <button className={`btn btn-${props.btnColor} mx-1 mb-1`} onClick={handleUppercase}>Convert to UPPERCASE</button>
+            <button className={`btn btn-${props.btnColor} mx-1 mb-1`} onClick={handleLowercase}>Convert to lowercase</button>
+            <button className={`btn btn-${props.btnColor} mx-1 mb-1`} onClick={handleCopy}>Copy Text</button>
+            <button className={`btn btn-${props.btnColor} mx-1 mb-1`} onClick={handleExtraSpace}>Remove extra spaces</button>
+            <button className={`btn btn-${props.btnColor} mx-1 mb-1`} onClick={handleClear}>Clear Text</button>
         </div>
         <div className='container my-4'>
             <h1>Your Text Summary</h1>
